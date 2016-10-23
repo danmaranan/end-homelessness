@@ -1,0 +1,15 @@
+<template name="cDetails">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Add Client</h4>
+        </div>
+        <div class="panel-body">
+          {{> quickForm id="fields1" schema=Schemas.Person collection="People" type="insert"}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+</template>

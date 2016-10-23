@@ -1,0 +1,55 @@
+<template name="shelterDetails">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Add Agency</h4>
+        </div>
+        <div class="panel-body">
+          {{> quickForm id="fields1" schema=Schemas.Shelters collection=Collections.Shelters type="insert"}}
+
+
+
+              <!-- {{#autoForm id="agencyUpdate" schema=Schemas.Shelters type=formType collection=Collections.Shelter doc=selectedShelterDoc autosave=autoSaveMode}}
+              {{> afQuickField name="agencyName"}}
+              {{> afQuickField name="continiumOfCare"}}
+              {{> afQuickField name="serveAdolescents"}}
+              {{> afQuickField name="serveMale"}}
+              {{> afQuickField name="serveFemale"}}
+              {{> afQuickField name="serveFamilies"}}
+              {{> afQuickField name="serveWomenWithChildren"}}
+              {{> afQuickField name="serveVeterans"}}
+              {{> afQuickField name="serveDomesticAbuseSurvivors"}}
+              {{> afQuickField name="servePregnantWomen"}}
+              {{> afQuickField name="serveHIVandAIDS"}}
+              {{> afQuickField name="serveHomeless"}}
+              {{> afQuickField name="serveSubstanceAbuse"}}
+              {{> afQuickField name="serveMentallyIll"}}
+              {{> afQuickField name="serveDevelopmentallyDelayed"}}
+              {{> afQuickField name="serveDisabled"}}
+              {{> afQuickField name="serveOther"}}
+              {{> afQuickField name="programDescription"}}
+              {{> afQuickField name="nonProfitStatus"}}
+              {{> afQuickField name="faithBased"}}
+              {{> afQuickField name="governmentEntity"}}
+              {{> afQuickField name="webAddress"}}
+              {{> afQuickField name="address"}}
+              {{> afQuickField name="representativeContacts"}}
+              {{> afQuickField name="bedding"}}
+
+              {{#unless autoSaveMode}}
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+                <button type="reset" class="btn btn-default" disabled="{{disableButtons}}">Reset Form</button>
+              </div>
+              {{/unless}}
+            {{/autoForm}} -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</template>

@@ -1,0 +1,50 @@
+<template name="updateClient">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Update Client</h4>
+          <p>
+            <a href="{{pathFor 'updateClient'}}">Update client</a> |
+            <a href="{{pathFor 'clientProfileReport'}}">Client profile report</a> |
+            <a href="{{pathFor 'qrProfile'}}">QR profile</a>
+          </p>
+
+        </div>
+        <div class="panel-body">
+          {{> quickForm collection=Collections.People doc=selectedPersonDoc id="afUpdateDemo" type="update"}}
+          <!-- {{#autoForm id="afUpdateDemo" schema=Schemas.Person type=formType collection=Collections.People doc=selectedPersonDoc autosave=autoSaveMode}}
+            {{> afQuickField name="socialSecurityNumber"}}
+            {{> afQuickField name="firstName"}}
+            {{> afQuickField name="middleName"}}
+            {{> afQuickField name="lastName"}}
+            {{> afQuickField name="gender"}}
+            {{> afQuickField name="age"}}
+            {{> afQuickField name="veteran"}}
+            {{> afQuickField name="pregnant"}}
+            {{> afQuickField name="historyOfDomesticViolence"}}
+            {{> afQuickField name="currentlyHomeless"}}
+            {{> afQuickField name="hivaids"}}
+            {{> afQuickField name="abusedSubstance"}}
+            {{> afQuickField name="educationalLevel"}}
+            {{> afQuickField name="currentlyEmployed"}}
+            {{> afQuickField name="phone"}}
+            {{> afQuickField name="emailAddress"}}
+            {{> afQuickField name="address"}}
+            {{> afQuickField name="disability"}}
+            {{> afQuickField name="familyContacts"}}
+
+            {{#unless autoSaveMode}}
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+              <button type="reset" class="btn btn-default" disabled="{{disableButtons}}">Reset Form</button>
+            </div>
+            {{/unless}}
+          {{/autoForm}} -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</template>

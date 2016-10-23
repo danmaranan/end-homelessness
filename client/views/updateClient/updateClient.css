@@ -1,0 +1,7 @@
+.shelter-row {
+  cursor: pointer;
+}
+
+.shelter-row.selected {
+  background-color: #ccc;
+}

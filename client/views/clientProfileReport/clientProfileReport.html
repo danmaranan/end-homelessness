@@ -1,0 +1,104 @@
+<template name="clientProfileReport">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>Client Profile Report</h4>
+          <p>
+            <a href="{{pathFor 'updateClient'}}">Update client</a> |
+            <a href="{{pathFor 'clientProfileReport'}}">Client profile report</a> |
+            <a href="{{pathFor 'qrProfile'}}">QR profile</a>
+          </p>
+
+          Risk Rating: {{riskFactorPercent}}
+          {{#if riskFactorPercentHigh}}
+          <p style="background-color:#FF0000;"><bold>HIGH</bold></p>
+          {{/if}}
+          {{#if riskFactorPercentMedium}}
+          <p style="background-color:yellow"><bold>Moderate Risk</bold></p>
+          {{/if}}
+          {{#if riskFactorPercentLow}}
+          <p style="background-color:green"><bold>Low Risk</bold></p>
+          {{/if}}
+        </div>
+        <div class="panel-body">
+          {{#with exampleDoc}}
+          <h4>{{firstName}} {{lastName}}</h4><br>
+          Veteran: {{veteran}}<br>
+          {{#if pregnant}}
+          Pregnant: true <br>
+          {{/if}}
+          {{#if historyOfDomesticViolence}}
+          History Of Domestic Violence: {{historyOfDomesticViolence}}<br>
+          {{/if}}
+          {{#if currentlyHomeless}}
+          Currently homeless: true<br>
+          {{/if}}
+          {{#if hivaids}} 
+          HIV Positive/AIDS: true<br>
+          {{/if}}
+          {{#if abusedSubstance}}
+          Abused Substance: {{abusedSubstance}}<br>
+          {{/if}}
+          {{#if educationalLevel}}
+          Educational Level: {{educationalLevel}}<br>
+          {{/if}}
+
+
+          <hr>
+
+          <h5>Addresses</h5>
+          {{#each address}}
+          {{startDate}} {{endDate}}<br>
+          {{street}}, {{address.city}} {{address.state}} {{address.postalCode}} <br>
+          {{/each}}
+          <h5>Family Contacts</h5>
+          {{#each familyContacts}}
+            <p>{{name}} ({{phone}})</p>
+          {{/each}}
+          <hr>
+          <h5>Disability</h5>
+          {{#each disability}}
+            <p>{{name}} ({{type}})</p>
+          {{/each}}
+          {{/with}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <hr>
+  <h3>Applicable Agencies</h3>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <td>Agency Name</td>
+        <td>Continium of Care</td>
+        <td>Rooms Available</td>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each availableShelters}}
+          <tr class="agency-row {{#if isSelectedShelter}}selected{{/if}}">
+          <td>{{agencyName}}</td>
+          <td>{{continiumOfCare}}</td>
+          <td>
+          {{#if bed}}
+
+          {{#each bed}}
+            {{#if available}}
+            <p>{{type}} Room Available</p>
+            {{/if}}
+          {{/each}}
+          {{else}}
+          No Availability
+          {{/if}}
+        </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</template>

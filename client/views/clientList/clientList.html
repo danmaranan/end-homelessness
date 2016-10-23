@@ -1,0 +1,29 @@
+<template name="clientList">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Client List</h3>
+      <p>Choose a client to edit. If there are none listed, go to the "Add Client" page and add some.</p>
+      <table class="table table-bordered table-condensed">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>SSN</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each people}}
+            <tr class="person-row {{#if isSelectedPerson}}selected{{/if}}">
+              <td>{{firstName}} {{lastName}}</td>
+              <td>{{age}}</td>
+              <td>{{socialSecurityNumber}}</td>
+              <td style="width: 70px">{{> quickRemoveButton collection=Collections.People _id=this._id class="btn btn-sm btn-danger"}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,27 @@
+<template name="qrProfile">
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>QR Code</h4>
+              <p><a href="{{pathFor 'updateClient'}}">Update client</a> |
+                 <a href="{{pathFor 'clientProfileReport'}}">Client profile report</a> |
+                  <a href="{{pathFor 'qrProfile'}}">QR profile</a>
+              </p>
+        </div>
+        <div class="panel-body">
+          {{#with exampleDoc}}
+          {{firstName}} {{lastName}}<br>
+          {{address.street}}, {{address.city}} {{address.state}} {{address.postalCode}} <br>
+        <!--        {{> QrCode text="http://192.168.1.104:3000/post/socialSecurityNumber"}} -->
+
+        {{> QrCode text=qrlText}}
+          {{/with}}
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+</template>

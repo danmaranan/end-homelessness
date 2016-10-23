@@ -1,0 +1,7 @@
+.agency-row {
+  cursor: pointer;
+}
+
+.agency-row.selected {
+  background-color: #ccc;
+}
